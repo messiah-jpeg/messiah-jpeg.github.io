@@ -1,33 +1,19 @@
-@font-face{
-	font-family: 'GoodluckSlabSerif';
-	src: url('Goodluck-SlabSerif_otf.woff2') format('woff2');
-	font-weight: 400;
-	font-style: slab-serif;
+@font-face {
+  font-family: 'GoodluckSlabSerif';
+  src: url('Goodluck-SlabSerif_otf.woff2') format('woff2');
+  font-weight: 400;
+  font-style: slab-serif;
 }
 
-@font-face{
-	font-family: 'Mont-Trial-Heavy';
-	src: url('Mont-Trial-Heavy.woff2') format('woff2');
-	font-weight: 400;
-	font-style: slab-serif;
+@font-face {
+  font-family: 'Mont-Trial-Heavy';
+  src: url('Mont-Trial-Heavy.woff2') format('woff2');
+  font-weight: 400;
+  font-style: slab-serif;
 }
-
-<style>
-.draggable {
-  width: 100px;
-  height:100px;
-  background-color: ghostwhite;
-  color: white;
-  text-align: center;
-  line-height: 100px;
-  position: absolute;
-  cursor: move;
-}
-
-</style>
 
 body {
-  background-image: url('g_background.jpg');
+  background-image: url('g_background.jpg');  /* Ensure this is the correct path */
   background-size: cover;       
   background-position: center;   
   background-repeat: no-repeat;  
@@ -39,6 +25,7 @@ body {
 a {
   cursor: pointer;
 }
+
 
 
 
