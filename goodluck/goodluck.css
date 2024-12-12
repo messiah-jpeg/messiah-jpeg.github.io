@@ -1,0 +1,69 @@
+@font-face{
+	font-family: 'GoodluckSlabSerif';
+	src: url('Goodluck-SlabSerif_otf.woff2') format('woff2');
+	font-weight: 400;
+	font-style: slab-serif;
+}
+
+@font-face{
+	font-family: 'Mont-Trial-Heavy';
+	src: url('Mont-Trial-Heavy.woff2') format('woff2');
+	font-weight: 400;
+	font-style: slab-serif;
+}
+
+<style>
+.draggable {
+  width: 100px;
+  height:100px;
+  background-color: lawngreen;
+  color: white;
+  text-align: center;
+  line-height: 100px;
+  position: absolute;
+  cursor: move;
+}
+</style>
+
+ body {
+  background-image: url('goodluck_landingpage_image.jpg');
+  background-size: cover;       
+  background-position: center;   
+  background-repeat: no-repeat;  
+  height: 100vh;                 
+  margin: 0;                     
+}
+
+body {
+  cursor: url('clover2.gif') auto;
+}
+
+a {
+  cursor: pointer;
+}
+
+h1 {
+	font-family: 'Mont-Trial-Heavy';
+  font-size: 40px; 
+  color: white; 
+  text-align: center;   
+}
+
+h2 {
+	font-family: 'Mont-Trial-Heavy';
+  font-size: 20px; 
+  color: white; 
+  text-align: center;   
+}
+
+/* Basic styling for the button */
+#downloadBtn {
+  position: absolute;  /* Important for positioning */
+  top: 100px;  /* Starting position */
+  left: 100px;  /* Starting position */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+

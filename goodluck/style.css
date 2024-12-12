@@ -1,0 +1,43 @@
+@font-face{
+	font-family: 'GoodluckSlabSerif';
+	src: url('Goodluck-SlabSerif_otf.woff2') format('woff2');
+	font-weight: 400;
+	font-style: slab-serif;
+}
+
+@font-face{
+	font-family: 'Mont-Trial-Heavy';
+	src: url('Mont-Trial-Heavy.woff2') format('woff2');
+	font-weight: 400;
+	font-style: slab-serif;
+}
+
+body{
+ background: green;
+ font-family: 'GoodLuckSlabSerif';
+ font-size: 100px;
+}
+
+body {
+  background-image: url('goodluck_landingpage_image.jpg');
+  background-size: cover;       
+  background-position: center;   
+  background-repeat: no-repeat;  
+  height: 100vh;                 
+  margin: 0;                     
+}
+
+body {
+  cursor: url('heartbubble.gif'), auto;
+}
+
+a {
+  cursor: pointer;
+}
+
+h1 {
+	font-family: 'Mont-Trial-Heavy';
+  font-size: 40px; 
+  color: white; 
+  text-align: center;   
+}
