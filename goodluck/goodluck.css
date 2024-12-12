@@ -42,28 +42,5 @@ a {
   cursor: pointer;
 }
 
-h1 {
-	font-family: 'Mont-Trial-Heavy';
-  font-size: 40px; 
-  color: white; 
-  text-align: center;   
-}
-
-h2 {
-	font-family: 'Mont-Trial-Heavy';
-  font-size: 20px; 
-  color: white; 
-  text-align: center;   
-}
-
-/* Basic styling for the button */
-#downloadBtn {
-  position: absolute;  /* Important for positioning */
-  top: 100px;  /* Starting position */
-  left: 100px;  /* Starting position */
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
 
 
