@@ -16,25 +16,23 @@
 .draggable {
   width: 100px;
   height:100px;
-  background-color: lawngreen;
+  background-color: ghostwhite;
   color: white;
   text-align: center;
   line-height: 100px;
   position: absolute;
   cursor: move;
 }
+
 </style>
 
 body {
-  background-image: url('goodluck_bg.jpg');
+  background-image: url('g_background.jpg');
   background-size: cover;       
   background-position: center;   
   background-repeat: no-repeat;  
   height: 100vh;                 
   margin: 0;                     
-}
-
-body {
   cursor: url('clover2.gif') auto;
 }
 
