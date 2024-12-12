@@ -13,7 +13,7 @@
 }
 
 body {
-  background-image: url('g_background.jpg');  /* Ensure this is the correct path */
+  background-image: url('g_background.jpg');  
   background-size: cover;       
   background-position: center;   
   background-repeat: no-repeat;  
