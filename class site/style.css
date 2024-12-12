@@ -1,0 +1,16 @@
+@font-face{
+	font-family: 'Mont-Trial-Heavy';
+	src: url('Mont-Trial-Heavy.woff2') format('woff2');
+	font-weight: 400;
+	font-style: slab-serif;
+}
+
+}
+body{
+	color: limegreen;
+	background: ghostwhite;
+	font-family: 'Goodluck';
+	font-size: 100px;
+
+
+}
