@@ -1,19 +1,24 @@
 @font-face {
-  font-family: 'GoodluckSlabSerif';
-  src: url('Goodluck-SlabSerif_otf.woff2') format('woff2');
-  font-weight: 400;
-  font-style: slab-serif;
-}
 
-@font-face {
   font-family: 'Mont-Trial-Heavy';
   src: url('Mont-Trial-Heavy.woff2') format('woff2');
-  font-weight: 400;
-  font-style: slab-serif;
+  font-weight: 400;  /* Regular weight, adjust if needed */
+  font-style: normal; /* Use 'normal' for regular style */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Mont-Trial-Heavy', sans-serif; /* Fall back to sans-serif if font fails */
+}
+
+h1 {
+  font-family: 'Mont-Trial-Heavy', sans-serif;
+  text-align: center;  /* Horizontal centering for text */
+  font-size: 3rem;  /* Example font size */
+  color: #333;  /* Optional text color */
 }
 
 body {
-  background-image: url('g_background.jpg');  
+  background-color: whitesmoke;
   background-size: cover;       
   background-position: center;   
   background-repeat: no-repeat;  
@@ -24,6 +29,45 @@ body {
 
 a {
   cursor: pointer;
+}
+
+/* Split the section into two parts, left and right */
+.split-section {
+    display: flex;
+    width: 100%;
+    height: 650px; /* Set a height for the images */
+}
+
+/* Both the left and right side take up 50% width */
+.left-side, .right-side {
+    flex: 1; /* Ensures both sides take up equal space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for images */
+.left-side img, .right-side img {
+    width: 90%; /* Make images take up 90% of their container width */
+    height: 90%; /* Make images take up 90% of their container height */
+    object-fit: cover; /* Ensure the image covers the container */
+    border-radius: 8px; /* Optional: Add rounded corners to the images */
+}
+
+/* Remove default spacing between sections */
+.split-section div {
+    margin: 0;
+    padding: 0;
+}
+
+.type-specimen {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 
