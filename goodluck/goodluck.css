@@ -5,6 +5,14 @@
   font-weight: 400;  /* Regular weight, adjust if needed */
   font-style: normal; /* Use 'normal' for regular style */
 }
+@font-face {
+
+  font-family: 'Goodluck-SlabSerif';
+  src: url('Goodluck-SlabSerif_otf.woff2') format('woff2');
+  font-weight: 400;  /* Regular weight, adjust if needed */
+  font-style: normal; /* Use 'normal' for regular style */
+}
+
 @keyframes fadeSlideUp {
   0% {
     opacity: 0; /* Start with invisible */
@@ -159,10 +167,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Style the textarea */
 #userInput {
-  width: 60%;                /* Set the width of the textarea (can adjust this) */
-  height: 300px;             /* Set a fixed height */
+  width: 80%;                /* Set the width of the textarea (can adjust this) */
+  height: 800px;             /* Set a fixed height */
   padding: 15px;             /* Add padding inside the textarea */
-  font-size: 70px;           /* Adjust the font size inside the textarea */
+  font-size: 270px;           /* Adjust the font size inside the textarea */
   background-color: black;   /* Black background for the text box */
   color: white;              /* White text color */
   resize: none;              /* Disable resizing the textarea */
@@ -174,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid transparent; /* Remove any border if set by default */
   box-shadow: none; 
 
-  font-family: 'Arial', sans-serif;
+  font-family: 'Goodluck-SlabSerif', sans-serif;
 }
 
 #userInput:focus {
