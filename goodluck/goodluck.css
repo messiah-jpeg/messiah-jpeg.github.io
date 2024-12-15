@@ -5,20 +5,76 @@
   font-weight: 400;  /* Regular weight, adjust if needed */
   font-style: normal; /* Use 'normal' for regular style */
 }
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Mont-Trial-Heavy', sans-serif; /* Fall back to sans-serif if font fails */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0; /* Start with invisible */
+    transform: translateY(100%); /* Start from below the screen */
+  }
+  100% {
+    opacity: 1; /* End with fully visible */
+    transform: translateY(0); /* Slide to normal position */
+  }
 }
 
-h1 {
+/* Step 2: Apply the animation to elements on page load */
+body {
+  animation: fadeSlideUp 1.5s ease-out; /* Fade and slide-up over 1.5 seconds */
+}
+
+/* Apply the same animation to other elements like .split-section or .type-specimen */
+.split-section, .type-specimen {
+  animation: fadeSlideUp 1.5s ease-out;
+  animation-delay: 0.5s; /* Optional delay to stagger animations */
+}
+
+/* Apply to images inside .left-side and .right-side */
+.left-side img, .right-side img {
+  opacity: 0;  /* Initially invisible */
+  transform: translateY(20px);  /* Start slightly below */
+  animation: fadeSlideUp 2s ease-out forwards; /* Apply fade and slide-up */
+  animation-delay: 1s; /* Optional delay for images */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    opacity: 1; /* End fully visible */
+  }
+}
+
+/* Apply the animation to the body */
+body {
+  animation: fadeIn 2s ease-in-out; /* Fade in over 2 seconds */
+}
+
+/* Apply the fade-in to the split-section */
+.split-section, .type-specimen {
+  animation: fadeIn 2s ease-in-out;
+  animation-delay: 0.5s; /* Optional delay to stagger animations */
+}
+
+/* Apply to images inside .left-side and .right-side */
+.left-side img, .right-side img {
+  opacity: 0; /* Initially invisible */
+  animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in */
+  animation-delay: 1s; /* Optional delay for images */
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Mont-Trial-Heavy', sans-serif; /* Fall back to sans-serif if font fails */
+}
+
+h2 {
   font-family: 'Mont-Trial-Heavy', sans-serif;
-  text-align: center;  /* Horizontal centering for text */
+  text-align: center;
   font-size: 3rem;  /* Example font size */
-  color: #333;  /* Optional text color */
+  color: #ffffff; 
+  margin: 3;
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: black;
   background-size: cover;       
   background-position: center;   
   background-repeat: no-repeat;  
@@ -33,43 +89,96 @@ a {
 
 /* Split the section into two parts, left and right */
 .split-section {
-    display: flex;
-    width: 100%;
-    height: 650px; /* Set a height for the images */
+  display: flex;
+  width: 100%;
+  height: auto;  /* Flexible height based on content */
+  margin-bottom: 0;  /* Remove any extra space between sections */
 }
+
+/* Ensure the section takes up the full height of the viewport */
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide any overflow from the image */
+}
+
+.section img {
+  width: 100%; /* Make the image stretch across the full width */
+  height: 100%; /* Make the image stretch across the full height */
+  object-fit: cover; /* Ensure the image covers the section without stretching */
+}
+
 
 /* Both the left and right side take up 50% width */
 .left-side, .right-side {
-    flex: 1; /* Ensures both sides take up equal space */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1; /* Ensures both sides take up equal space */
+  display: flex;
+  justify-content: center; /* Align items horizontally in the center */
+  align-items: center;     /* Align items vertically in the center */
 }
 
 /* Style for images */
 .left-side img, .right-side img {
-    width: 90%; /* Make images take up 90% of their container width */
-    height: 90%; /* Make images take up 90% of their container height */
-    object-fit: cover; /* Ensure the image covers the container */
-    border-radius: 8px; /* Optional: Add rounded corners to the images */
+  width: 100%; /* Make images take up 100% of their container width */
+  height: 100%; /* Make images take up 100% of their container height */
+  object-fit: contain; /* Ensure the image fits inside the container without stretching */
+  border-radius: 0px; /* Optional: Remove or adjust rounded corners */
 }
 
 /* Remove default spacing between sections */
 .split-section div {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
+/* Tighten the margin around .type-specimen */
 .type-specimen {
   width: 80%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 10px auto; /* Reduced margin to bring sections closer together */
   background-color: #fff;
-  padding: 20px;
+  padding: 10px; /* Reduced padding inside the type specimen */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Reduce space around heading elements */
+h1, h2, h3, h4, h5, h6 {
+  margin: 5px 0; /* Reduced space around headings */
+  padding: 0;    /* Remove any padding from headings */
+}
 
+.container {
+  display: flex;
+  justify-content: center;   /* Center horizontally */
+  align-items: center;       /* Center vertically */
+  height: 100vh;             /* Make the container take up the full viewport height */
+ /* Optional: background color for the container */
+}
 
+/* Style the textarea */
+#userInput {
+  width: 60%;                /* Set the width of the textarea (can adjust this) */
+  height: 300px;             /* Set a fixed height */
+  padding: 15px;             /* Add padding inside the textarea */
+  font-size: 70px;           /* Adjust the font size inside the textarea */
+  background-color: black;   /* Black background for the text box */
+  color: white;              /* White text color */
+  resize: none;              /* Disable resizing the textarea */
+  
+  /* Center the text inside */
+  text-align: center;        /* Center text horizontally */
+  line-height: 1.5;          /* Vertically space out lines of text */
 
+  border: 2px solid transparent; /* Remove any border if set by default */
+  box-shadow: none; 
+
+  font-family: 'Arial', sans-serif;
+}
+
+#userInput:focus {
+  outline: none;             /* Remove the default focus outline */
+}
+
+=
