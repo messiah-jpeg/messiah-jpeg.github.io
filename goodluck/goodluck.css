@@ -180,4 +180,14 @@ h2 {
   position: relative;
 }
 
+.letter:nth-child(4) {
+  transform: rotate(17deg); /* Static rotation of 90 degrees */
+}
 
+.letter:nth-child(5) {
+  transform: rotate(20deg); /* Static rotation of 90 degrees */
+}
+
+.letter:nth-child(7) {
+  transform: rotate(-45deg); /* Static rotation of 90 degrees */
+}
