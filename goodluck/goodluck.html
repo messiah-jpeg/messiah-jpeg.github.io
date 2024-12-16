@@ -7,8 +7,23 @@
   <link rel="stylesheet" href="goodluck.css">
 </head>
 <body>
-    <h1> goodluck </h1>
 
+  <!-- First Section with Draggable Letters -->
+  <section class="split-section" id="goodluck-section">
+    <div class="letter-container">
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">g</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">o</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">o</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">d</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">l</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">u</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">c</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">k</span>
+    </div>
+  </section>
+
+  <!-- Other Sections of Your Page (Unchanged) -->
+  <!-- Add your existing content below as it was -->
 
   <section class="split-section">
     <div class="left-side">
@@ -25,7 +40,6 @@
     </div>
   </section>
 
-
   <section class="section">
     <div class="center">
       <p align="center">
@@ -36,7 +50,7 @@
     </div>
   </section>
 
-  <!-- Third Section with Textarea Input -->
+  <!-- Textarea Section -->
   <section class="split-section">
     <div class="left-side">
       <p align="left">
@@ -48,15 +62,13 @@
     <div class="right-side">
       <h1></h1>
       <p></p>
-
-      
       <div class="container">
         <textarea id="userInput" placeholder="type your name here!" rows="20" cols="50"></textarea>
       </div>
     </div>
   </section>
 
-  
+  <!-- Controls for adjusting text -->
   <div class="controls">
     <label for="tracking">Tracking</label>
     <input type="range" id="tracking" min="-50" max="50" value="0" step="1">
@@ -67,35 +79,60 @@
     <label for="lineSpacing">Line Spacing</label>
     <input type="range" id="lineSpacing" min="0.5" max="3" value="1.5" step="0.1">
 
-   
     <label for="textSize">Text Size</label>
     <input type="range" id="textSize" min="50" max="400" value="270" step="1">
   </div>
 
-  
+  <!-- JavaScript to handle the controls -->
   <script>
-    
     document.getElementById("tracking").addEventListener("input", function() {
       const value = this.value;
       document.documentElement.style.setProperty('--letter-spacing', `${value}px`);
     });
 
-    
     document.getElementById("kerning").addEventListener("input", function() {
       const value = this.value;
       document.documentElement.style.setProperty('--letter-spacing', `${value}px`);
     });
 
- 
     document.getElementById("lineSpacing").addEventListener("input", function() {
       const value = this.value;
       document.documentElement.style.setProperty('--line-height', `${value}`);
     });
 
-   
     document.getElementById("textSize").addEventListener("input", function() {
       const value = this.value;
-      document.getElementById("userInput").style.fontSize = `${value}px`;
+      document.querySelectorAll('.letter').forEach(function(letter) {
+        letter.style.fontSize = `${value}px`;
+      });
+    });
+
+    // JavaScript for dragging letters and applying gravity
+    const letters = document.querySelectorAll('.letter');
+    letters.forEach(letter => {
+      letter.addEventListener('mousedown', function(e) {
+        const letter = e.target;
+        let offsetX = e.clientX - letter.getBoundingClientRect().left;
+        let offsetY = e.clientY - letter.getBoundingClientRect().top;
+
+        function mouseMoveHandler(e) {
+          letter.style.left = `${e.clientX - offsetX}px`;
+          letter.style.top = `${e.clientY - offsetY}px`;
+        }
+
+        function mouseUpHandler() {
+          // Apply gravity effect (drop to the bottom)
+          const sectionHeight = document.getElementById('goodluck-section').offsetHeight;
+          letter.style.top = `${sectionHeight - letter.offsetHeight}px`; // Gravity effect
+
+          // Remove event listeners
+          document.removeEventListener('mousemove', mouseMoveHandler);
+          document.removeEventListener('mouseup', mouseUpHandler);
+        }
+
+        document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
+      });
     });
   </script>
 
