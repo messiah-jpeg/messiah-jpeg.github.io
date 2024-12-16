@@ -1,68 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>goodluck.com</title>
-   <link rel="stylesheet" type="text/css" href="goodluck.css">
-</head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>goodluck.com</title>
+  <link rel="stylesheet" href="goodluck.css">
+  <style>
+    /* Global styles for the page */
+    body {
+      background-color: black;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Mont-Trial-Heavy', sans-serif; /* Default font */
+      cursor: url('clover2.gif') auto;
+      color: white;
+    }
 
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Mont-Trial-Heavy', sans-serif;
+    }
 
- </p>
-<h2> goodluck </h2>
+    h2 {
+      font-size: 3rem;
+      text-align: center;
+      color: #ffffff;
+    }
 
+    .split-section {
+      display: flex;
+      width: 100%;
+      height: auto;
+      margin-bottom: 0;
+    }
+
+    .section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .left-side, .right-side {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left-side img, .right-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 0px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Styling for the Textarea */
+    #userInput {
+      width: 80%;
+      height: 800px;
+      padding: 15px;
+      font-size: 270px;
+      background-color: black;
+      color: white;
+      resize: none;
+      text-align: center;
+      line-height: var(--line-height, 1.5); /* Default line height */
+      letter-spacing: var(--letter-spacing, 0px); /* Default tracking/kerning */
+      word-spacing: var(--word-spacing, 0px); /* Default word spacing */
+      border: 2px solid transparent;
+      box-shadow: none;
+      font-family: 'Goodluck-SlabSerif', sans-serif;
+    }
+
+    /* Controls styling */
+    .controls {
+      font-family: 'Mont-Trial-Heavy', sans-serif; /* Font for controls */
+      text-align: center;
+      margin-top: 20px;
+      color: white;
+    }
+
+    .controls label {
+      font-size: 1.2rem;
+    }
+
+    .controls input[type="range"] {
+      width: 300px;
+      margin: 10px 0;
+    }
+
+    #userInput:focus {
+      outline: none;
+    }
+  </style>
+</head>
 <body>
-   <--first section--> 
- <section class="split-section">
-   <div class="left-side">
-            <p align="left">
-            <h1></h1>
-            <p></p>
-            <!-- example of image -->
-            <img src="images/section1.jpg" alt="Example Image">
-        </p>
-        </div>
-        <div class="right-side">
-            <h1></h1>
-            <p></p>
-            <!-- example of image -->
-            <img src="images/section12.jpg" alt="Example Image">
-        </div>
-    </section>
 
- <section class="section">
-        <div class="center">
-            <p align="center">
-            <h1></h1>
-            <p></p>
-            <!-- Example of an image in left side -->
-            <img src="goodluck_bg.jpg" alt="Example Image"> </p>
-    </section>
-<section class="split-section">
-        <div class="left-side">
-            <p align="left">
-            <h1></h1>
-            <p></p>
-            <!-- Example of an image in left side -->
-            <img src="ddl.jpg" alt="Example Image">
-        </p>
-        </div>
-        <div class="right-side">
-            <h1></h1>
-            <p></p>
-    
-    <!-- Textarea for multi-line input -->
-    <div class="container">
-  <textarea id="userInput" placeholder="type your name here!" rows="20" cols="50"></textarea>
-</div>
-    </section>
+  <!-- First Section -->
+  <section class="split-section">
+    <div class="left-side">
+      <p align="left">
+        <h1></h1>
+        <p></p>
+        <img src="images/section1.jpg" alt="Example Image">
+      </p>
+    </div>
+    <div class="right-side">
+      <h1></h1>
+      <p></p>
+      <img src="images/section12.jpg" alt="Example Image">
+    </div>
+  </section>
 
-     <p align="right">
-       <button> other button </button>
- </p>
+  <!-- Second Section -->
+  <section class="section">
+    <div class="center">
+      <p align="center">
+        <h1></h1>
+        <p></p>
+        <img src="goodluck_bg.jpg" alt="Example Image">
+      </p>
+    </div>
+  </section>
 
+  <!-- Third Section with Textarea Input -->
+  <section class="split-section">
+    <div class="left-side">
+      <p align="left">
+        <h1></h1>
+        <p></p>
+        <img src="ddl.jpg" alt="Example Image">
+      </p>
+    </div>
+    <div class="right-side">
+      <h1></h1>
+      <p></p>
 
-</section>
+      <!-- Textarea for user input -->
+      <div class="container">
+        <textarea id="userInput" placeholder="type your name here!" rows="20" cols="50"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls for adjusting text -->
+  <div class="controls">
+    <label for="tracking">Tracking</label>
+    <input type="range" id="tracking" min="-50" max="50" value="0" step="1">
+
+    <label for="kerning">Kerning</label>
+    <input type="range" id="kerning" min="-50" max="50" value="0" step="1">
+
+    <label for="lineSpacing">Line Spacing</label>
+    <input type="range" id="lineSpacing" min="0.5" max="3" value="1.5" step="0.1">
+  </div>
+
+  <!-- JavaScript to handle the controls -->
+  <script>
+    // JavaScript to update letter-spacing, kerning, and line-height dynamically
+
+    // Update tracking (letter-spacing)
+    document.getElementById("tracking").addEventListener("input", function() {
+      const value = this.value;
+      document.documentElement.style.setProperty('--letter-spacing', `${value}px`);
+    });
+
+    // Update kerning (individual letter spacing)
+    document.getElementById("kerning").addEventListener("input", function() {
+      const value = this.value;
+      document.documentElement.style.setProperty('--letter-spacing', `${value}px`);
+    });
+
+    // Update line spacing
+    document.getElementById("lineSpacing").addEventListener("input", function() {
+      const value = this.value;
+      document.documentElement.style.setProperty('--line-height', `${value}`);
+    });
+  </script>
+
 </body>
 </html>
+
+
+
 
