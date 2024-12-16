@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<h1> drag the letters, find the word </h1>
   <!-- First Section with Draggable Letters -->
   <section class="split-section" id="goodluck-section">
     <div class="letter-container">
@@ -106,7 +107,7 @@
       });
     });
 
-    // JavaScript for dragging letters and applying gravity
+    // JavaScript for dragging letters (without gravity effect)
     const letters = document.querySelectorAll('.letter');
     letters.forEach(letter => {
       letter.addEventListener('mousedown', function(e) {
@@ -120,11 +121,7 @@
         }
 
         function mouseUpHandler() {
-          // Apply gravity effect (drop to the bottom)
-          const sectionHeight = document.getElementById('goodluck-section').offsetHeight;
-          letter.style.top = `${sectionHeight - letter.offsetHeight}px`; // Gravity effect
-
-          // Remove event listeners
+          // Remove event listeners when mouse is released
           document.removeEventListener('mousemove', mouseMoveHandler);
           document.removeEventListener('mouseup', mouseUpHandler);
         }
