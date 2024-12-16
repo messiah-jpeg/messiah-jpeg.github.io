@@ -14,7 +14,7 @@
 
 h1 {
   text-align: center;
-  font-size: 3rem;  /* You can adjust the size of the header text */
+  font-size: 3rem;  
   margin-top: 20px;
 }
 
@@ -91,9 +91,9 @@ h2 {
   color: white;
   resize: none;
   text-align: center;
-  line-height: var(--line-height, 1.5); /* Default line height */
-  letter-spacing: var(--letter-spacing, 0px); /* Default tracking/kerning */
-  word-spacing: var(--word-spacing, 0px); /* Default word spacing */
+  line-height: var(--line-height, 1.5); 
+  letter-spacing: var(--letter-spacing, 0px); 
+  word-spacing: var(--word-spacing, 0px); 
   border: 2px solid transparent;
   box-shadow: none;
   font-family: 'Goodluck-SlabSerif', sans-serif;
@@ -113,24 +113,23 @@ h2 {
 .controls input[type="range"] {
   width: 300px;
   margin: 10px 0;
-  -webkit-appearance: none;  /* Removes default styling for webkit browsers */
-  -moz-appearance: none;     /* Removes default styling for Firefox */
-  appearance: none;          /* Removes default styling */
-  background: #333;
+  -webkit-appearance: none;  
+  -moz-appearance: none;     
+  appearance: none;          
   height: 10px;
   border-radius: 5px;
 }
 
-/* Neon green thumb for Webkit (Chrome, Safari, Edge) */
+
 .controls input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
   height: 20px;
-  background: #c8d759; /* Neon green color code */
+  background: #c8d759; 
   border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0px 0px 10px 2px #c8d759; /* Neon green glowing effect */
+  box-shadow: 0px 0px 10px 2px #c8d759;
 }
 
 /* Neon green thumb for Firefox */
