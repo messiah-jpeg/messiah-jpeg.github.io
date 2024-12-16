@@ -192,3 +192,8 @@ h2 {
   transform: rotate(-45deg);
 }
 
+.letter {
+  user-select: none; /* Prevent text selection */
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
+}
