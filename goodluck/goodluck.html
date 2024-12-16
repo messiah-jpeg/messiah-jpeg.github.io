@@ -5,112 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>goodluck.com</title>
   <link rel="stylesheet" href="goodluck.css">
-  <style>
-    /* Global styles for the page */
-    body {
-      background-color: black;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh;
-      margin: 0;
-      font-family: 'Mont-Trial-Heavy', sans-serif; /* Default font */
-      cursor: url('clover2.gif') auto;
-      color: white;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Mont-Trial-Heavy', sans-serif;
-    }
-
-    h2 {
-      font-size: 3rem;
-      text-align: center;
-      color: #ffffff;
-    }
-
-    .split-section {
-      display: flex;
-      width: 100%;
-      height: auto;
-      margin-bottom: 0;
-    }
-
-    .section {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .section img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .left-side, .right-side {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .left-side img, .right-side img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 0px;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    /* Styling for the Textarea */
-    #userInput {
-      width: 80%;
-      height: 800px;
-      padding: 15px;
-      font-size: 270px;
-      background-color: black;
-      color: white;
-      resize: none;
-      text-align: center;
-      line-height: var(--line-height, 1.5); /* Default line height */
-      letter-spacing: var(--letter-spacing, 0px); /* Default tracking/kerning */
-      word-spacing: var(--word-spacing, 0px); /* Default word spacing */
-      border: 2px solid transparent;
-      box-shadow: none;
-      font-family: 'Goodluck-SlabSerif', sans-serif;
-    }
-
-    /* Controls styling */
-    .controls {
-      font-family: 'Mont-Trial-Heavy', sans-serif; /* Font for controls */
-      text-align: center;
-      margin-top: 20px;
-      color: white;
-    }
-
-    .controls label {
-      font-size: 1.2rem;
-    }
-
-    .controls input[type="range"] {
-      width: 300px;
-      margin: 10px 0;
-    }
-
-    #userInput:focus {
-      outline: none;
-    }
-  </style>
 </head>
 <body>
+    <h1> goodluck </h1>
 
   <!-- First Section -->
   <section class="split-section">
@@ -169,12 +66,14 @@
 
     <label for="lineSpacing">Line Spacing</label>
     <input type="range" id="lineSpacing" min="0.5" max="3" value="1.5" step="0.1">
+
+    <!-- New Text Size Control -->
+    <label for="textSize">Text Size</label>
+    <input type="range" id="textSize" min="50" max="400" value="270" step="1">
   </div>
 
   <!-- JavaScript to handle the controls -->
   <script>
-    // JavaScript to update letter-spacing, kerning, and line-height dynamically
-
     // Update tracking (letter-spacing)
     document.getElementById("tracking").addEventListener("input", function() {
       const value = this.value;
@@ -191,6 +90,12 @@
     document.getElementById("lineSpacing").addEventListener("input", function() {
       const value = this.value;
       document.documentElement.style.setProperty('--line-height', `${value}`);
+    });
+
+    // Update text size
+    document.getElementById("textSize").addEventListener("input", function() {
+      const value = this.value;
+      document.getElementById("userInput").style.fontSize = `${value}px`;
     });
   </script>
 
