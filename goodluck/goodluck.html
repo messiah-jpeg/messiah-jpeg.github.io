@@ -24,7 +24,6 @@
   </section>
 
   <!-- Other Sections of Your Page (Unchanged) -->
-  <!-- Add your existing content below as it was -->
   <section class="split-section">
     <div class="left-side">
       <p align="left">
@@ -102,9 +101,8 @@
 
     document.getElementById("textSize").addEventListener("input", function() {
       const value = this.value;
-      document.querySelectorAll('.letter').forEach(function(letter) {
-        letter.style.fontSize = `${value}px`;
-      });
+      // Update font size for the #userInput textarea
+      document.getElementById('userInput').style.fontSize = `${value}px`;
     });
 
     // JavaScript for dragging letters (without gravity effect)
@@ -134,7 +132,5 @@
 
 </body>
 </html>
-
-
 
 
