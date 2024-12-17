@@ -1,44 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>messiah's class site</title>
-	 <link rel="stylesheet" type="text/css" href="style.css"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>messiah's class site</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> 
 </head>
 <body>
-	 
-<h1> </h1>
+    
+    <h1> </h1>
 
+    <p align="right">
+        <a href="semantic-markup/semantic.html">
+            <button> semantic markup </button>
+        </a>
+    </p>
 
-<p align="right">
-     <a href="semantic-markup/semantic.html">
-     <button> semantic markup </button>
-     </a>
-       </p>
+    <p align="left">
+        <a href="semantic-markup/semantic.html">
+            <button> poster excercise </button>
+        </a>
+    </p>
 
-<p align="left">
-     <a href="semantic-markup/semantic.html">
-        <button> poster excercise </button></a>
-       </p>
+    <p align="right">
+        <a href="goodluck/goodluck.html">
+            <button> goodluck site </button>
+        </a>
+    </p>
 
+    <p align="left">
+        <a href="https://motsuka.com/sva-webtype/" target="_blank">
+            <button> class website </button>
+        </a>
+    </p>
 
- <p align="right">
-     <a href="goodluck/goodluck.html"><button> goodluck site
-      </button></a>
-       </p>
+    <!-- Dark mode button -->
+    <p align="left">
+        <a href="javascript:void(0);" id="darkModeButton">
+            <button> darkmode </button>
+        </a>
+    </p>
 
-<p align="left">
-     <a href="semantic-markup/semantic.html"><button> darkmode
-      </button></a>
-       </p>
-
-<p align="left">
-    <a href="https://motsuka.com/sva-webtype/" target="_blank">
-        <button>class website</button>
-    </a>
-</p>
-
+    
+    <script>
+        
+        const darkModeButton = document.getElementById('darkModeButton');
+        
+        
+        darkModeButton.addEventListener('click', function() {
+            
+            document.body.style.backgroundImage = "url('background2.jpg')";
+        });
+    </script>
 
 </body>
 </html>
+

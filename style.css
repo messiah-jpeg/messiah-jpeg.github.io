@@ -8,7 +8,7 @@
 }
 body{
 	color: limegreen;
-	background: ghostwhite;
+	background: black;
 	font-family: 'Goodluck';
 	font-size: 100px;
 
@@ -17,6 +17,7 @@ body{
 
 body {
   background-image: url('background3.jpg');
+  background-color: black;
   background-size: cover;       
   background-position: center;   
   background-repeat: no-repeat;  
