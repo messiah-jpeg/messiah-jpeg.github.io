@@ -40,25 +40,16 @@ h2 {
   color: #ffffff;
 }
 
-h1 {
-  text-align: center;
-  font-size: 3rem;
-  margin-top: 20px;
-  margin-bottom: 0;
-}
-
 h3 {
+  font-size: 1.3rem;
   text-align: center;
-  font-size: 1.5rem;  
-  margin-top: 0px;   
-  margin-bottom: 0;   
-  line-height: 1.0; 
+  color: #ffffff;
 }
 
-body {
-  cursor: url('images/pixelclover.png'), auto;
+h1, h3 {
+  line-height: 1.1; /* Tighter line height */
+  margin-bottom: 0px; /* Reduce space below headers */
 }
-
 
 .split-section {
   display: flex;
@@ -101,7 +92,7 @@ body {
   height: 100vh;
 }
 
-
+/* Styling for the Textarea */
 #userInput {
   width: 80%;
   height: 800px;
@@ -151,7 +142,7 @@ body {
   box-shadow: 0px 0px 10px 2px #c8d759;
 }
 
-
+/* Neon green thumb for Firefox */
 .controls input[type="range"]::-moz-range-thumb {
   width: 20px;
   height: 20px;
@@ -174,7 +165,7 @@ body {
   outline: none;
 }
 
-
+/* Style for the draggable letters section */
 .letter-container {
   display: flex;
   justify-content: center;
@@ -189,17 +180,17 @@ body {
   margin: 0 10px;
   position: absolute;
   cursor: pointer;
-  transition: transform 0.1s ease; 
+  transition: transform 0.1s ease; /* Smooth dragging effect */
 }
 
-
+/* Styling for the section where letters are located */
 #goodluck-section {
   background-color: black;
   height: 100vh;
   position: relative;
 }
 
-
+/* Static rotation for specific letters */
 .letter:nth-child(4) {
   transform: rotate(17deg);
 }
@@ -213,31 +204,51 @@ body {
 }
 
 .letter {
-  user-select: none; 
-  -webkit-user-select: none; 
-  -moz-user-select: none; 
+  user-select: none; /* Prevent text selection */
+  -webkit-user-select: none; /* For Safari */
+  -moz-user-select: none; /* For Firefox */
 }
 
-
+/* Styling for the Scroll Down Button */
 .scroll-btn {
   position: absolute;
-  bottom: 100px; 
+  bottom: 100px; /* Move the button higher */
   left: 50%;
-  transform: translateX(-50%); 
+  transform: translateX(-50%); /* Centers the button horizontally */
   padding: 15px 30px;
   background-color: white;
   color: black;
   font-family: 'Mont-Trial-Heavy', sans-serif;
   font-size: 1.5rem;
-  border-radius: 50px; 
+  border-radius: 50px; /* Circular shape */
   cursor: pointer;
   border: none;
   transition: background-color 0.3s, color 0.3s;
+  animation: bounce 1s infinite; /* Apply bouncing animation */
 }
 
-
+/* Hover effect for the button */
 .scroll-btn:hover {
   background-color: black;
   color: white;
+}
+
+/* Bouncing animation for the Scroll Down Button */
+@keyframes bounce {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  25% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  50% {
+    transform: translateX(-50%) translateY(0);
+  }
+  75% {
+    transform: translateX(-50%) translateY(10px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
