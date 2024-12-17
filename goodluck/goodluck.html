@@ -8,18 +8,26 @@
 </head>
 <body>
 
-<h1> drag the letters, find the word </h1>
+<h1> goodluck <h1>
+<h3> drag the letters, find the word </h3>
   <!-- First Section with Draggable Letters -->
   <section class="split-section" id="goodluck-section">
     <div class="letter-container">
-      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">g</span>
-      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">o</span>
-      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">o</span>
-      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">d</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">h</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">e</span>
       <span class="letter" style="font-family: 'Goodluck-SlabSerif';">l</span>
-      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">u</span>
-      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">c</span>
-      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">k</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">l</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">o</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">w</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">o</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">r</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">l</span>
+      <span class="letter" style="font-family: 'Goodluck-SlabSerif';">d</span>
+    </div>
+
+    <!-- Scroll Down Button -->
+    <div class="scroll-btn">
+      Scroll Down
     </div>
   </section>
 
@@ -123,9 +131,17 @@
         document.addEventListener('mouseup', mouseUpHandler);
       });
     });
+
+    // Scroll down functionality for the button
+    document.querySelector('.scroll-btn').addEventListener('click', function() {
+      const nextSection = document.querySelector('.section'); // Assuming the next section is the first one with class 'section'
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    });
   </script>
 
 </body>
 </html>
+
+
 
 
