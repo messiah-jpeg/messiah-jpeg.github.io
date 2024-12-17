@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<h1> goodluck <h1>
+<h1> goodluck </h1>
 <h3> drag the letters, find the word </h3>
-  <!-- First Section with Draggable Letters -->
+
   <section class="split-section" id="goodluck-section">
     <div class="letter-container">
       <span class="letter" style="font-family: 'Goodluck-SlabSerif';">h</span>
@@ -31,29 +31,19 @@
     </div>
   </section>
 
-  <!-- Other Sections of Your Page (Unchanged) -->
+  <!-- Second Section with Slide Show -->
   <section class="section">
-    <div class="left-side">
-      <p align="left">
-        <h1></h1>
-        <p></p>
-        <img src="images/sectiona.jpg" alt="Example Image">
-      </p>
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="images/sectiona.jpg" alt="First Image">
+      </div>
+      <div class="slide">
+        <img src="goodluck_bg.jpg" alt="Second Image">
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="center">
-      <p align="center">
-        <h1></h1>
-        <p></p>
-        <img src="goodluck_bg.jpg" alt="Example Image">
-      </p>
-    </div>
-  </section>
-
-  <!-- Textarea Section -->
-  <section class="split-section">
+   <section class="split-section">
     <div class="left-side">
       <p align="left">
         <h1></h1>
@@ -70,7 +60,6 @@
     </div>
   </section>
 
-  <!-- Controls for adjusting text -->
   <div class="controls">
     <label for="tracking">Tracking</label>
     <input type="range" id="tracking" min="-50" max="50" value="0" step="1">
@@ -85,8 +74,67 @@
     <input type="range" id="textSize" min="50" max="400" value="270" step="1">
   </div>
 
-  <!-- JavaScript to handle the controls -->
+
   <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+
+    function showSlides() {
+      for (let i = 0; i < totalSlides; i++) {
+        slides[i].style.transform = "translateX(100%)";  
+      }
+
+      slideIndex++;
+      if (slideIndex > totalSlides) {
+        slideIndex = 1;  
+      }
+
+      const currentSlide = slides[slideIndex - 1];
+      currentSlide.style.transition = "transform 1s ease-in-out"; 
+
+      currentSlide.style.transform = "translateX(0%)";  
+
+      
+      const nextSlide = slides[slideIndex % totalSlides];
+      nextSlide.style.transform = "translateX(100%)";  
+
+      setTimeout(showSlides, 4000);  
+    }
+
+    showSlides();  
+
+    
+    document.querySelector('.scroll-btn').addEventListener('click', function() {
+      const nextSection = document.querySelector('.section'); 
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    
+    const letters = document.querySelectorAll('.letter');
+    letters.forEach(letter => {
+      letter.addEventListener('mousedown', function(e) {
+        const letter = e.target;
+        let offsetX = e.clientX - letter.getBoundingClientRect().left;
+        let offsetY = e.clientY - letter.getBoundingClientRect().top;
+
+        function mouseMoveHandler(e) {
+          letter.style.left = `${e.clientX - offsetX}px`;
+          letter.style.top = `${e.clientY - offsetY}px`;
+        }
+
+        function mouseUpHandler() {
+          
+          document.removeEventListener('mousemove', mouseMoveHandler);
+          document.removeEventListener('mouseup', mouseUpHandler);
+        }
+
+        document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
+      });
+    });
+
+    
     document.getElementById("tracking").addEventListener("input", function() {
       const value = this.value;
       document.documentElement.style.setProperty('--letter-spacing', `${value}px`);
@@ -104,43 +152,15 @@
 
     document.getElementById("textSize").addEventListener("input", function() {
       const value = this.value;
-      // Update font size for the #userInput textarea
+    
       document.getElementById('userInput').style.fontSize = `${value}px`;
-    });
-
-    // JavaScript for dragging letters (without gravity effect)
-    const letters = document.querySelectorAll('.letter');
-    letters.forEach(letter => {
-      letter.addEventListener('mousedown', function(e) {
-        const letter = e.target;
-        let offsetX = e.clientX - letter.getBoundingClientRect().left;
-        let offsetY = e.clientY - letter.getBoundingClientRect().top;
-
-        function mouseMoveHandler(e) {
-          letter.style.left = `${e.clientX - offsetX}px`;
-          letter.style.top = `${e.clientY - offsetY}px`;
-        }
-
-        function mouseUpHandler() {
-          // Remove event listeners when mouse is released
-          document.removeEventListener('mousemove', mouseMoveHandler);
-          document.removeEventListener('mouseup', mouseUpHandler);
-        }
-
-        document.addEventListener('mousemove', mouseMoveHandler);
-        document.addEventListener('mouseup', mouseUpHandler);
-      });
-    });
-
-    // Scroll down functionality for the button
-    document.querySelector('.scroll-btn').addEventListener('click', function() {
-      const nextSection = document.querySelector('.section'); // Assuming the next section is the first one with class 'section'
-      nextSection.scrollIntoView({ behavior: 'smooth' });
     });
   </script>
 
 </body>
 </html>
+
+
 
 
 
