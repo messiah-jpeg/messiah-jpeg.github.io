@@ -24,3 +24,7 @@ body {
   height: 100vh;                 
   margin: 0;                     
 }
+
+body {
+  cursor: url('skull.png'), auto;
+}
